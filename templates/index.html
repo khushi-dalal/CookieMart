@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: #11999E;">Welcome to CookieMart!</h1><br>
+<div class="row mb-2 gy-3">
+    {% for product in products %}
+        <div class="col">
+            <div class="card h-100" style="inline-size: 18rem;">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">₹{{ product.price }}</p>
+                    <a href="#" class="btn btn-primary" style="inset-block-end: 0;">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}
